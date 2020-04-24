@@ -1,0 +1,12 @@
+[Unit]
+Description=WolWorker uWSGI instance
+After=network.target
+
+[Service]
+User=user
+Group=www-data
+WorkingDirectory=/app
+ExecStart=/usr/bin/uwsgi --ini wolworker.ini
+
+[Install]
+WantedBy=multi-user.target
