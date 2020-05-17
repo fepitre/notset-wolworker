@@ -28,7 +28,4 @@ class AuthClient:
 
     def valid_token(self, token):
         decoded_uid = self.decode_token(token)
-        if not (decoded_uid or decoded_uid in self._uids):
-            return False
-        else:
-            return True
+        return decoded_uid in self._uids
